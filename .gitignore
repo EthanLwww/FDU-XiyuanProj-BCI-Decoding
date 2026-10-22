@@ -1,0 +1,77 @@
+# Python environments, bytecode and tool caches
+.venv*/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+node_modules/
+
+# Local/editor state and secrets
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+~$*
+
+# Temporary scripts, upload helpers and document build products
+.sync-work/
+.ppt-build/
+.chart-data-*/
+.codex-finalizer/
+tmp/
+temp/
+_upload_logs/
+BCI.zip
+compute_local_md5.ps1
+upload_datasets.ps1
+upload_delta.ps1
+run_count_*.py
+FILTER_BANK_REMOTE.md
+BROADBAND_RESIDUAL_REMOTE.md
+scaling_experiments/RESIDUAL_SCALING_STATUS.md
+scaling_experiments/residual_monitor_last.json
+*.log
+*.tmp
+*.bak
+*.pid
+*.swp
+*.swo
+
+# Raw EEG, training caches, checkpoints and full experiment archives
+Data/
+data/
+Dataset*/
+dataset*/
+Save/
+save/
+cache/
+runtime/
+checkpoints/
+experiment_results/
+experiments/
+*.mat
+*.npy
+*.npz
+*.h5
+*.hdf5
+*.keras
+*.pt
+*.pth
+*.ckpt*
+*.tfrecord*
+*.zip
+*.tar
+*.tar.gz
+*.tgz
+
+# Published reports/results are curated metrics, histories and plots only.
+# Permanent regression tests in tests/ and test_streaming.py are versioned.

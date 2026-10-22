@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "group": "s10",
+  "phase": "pretrain",
+  "checkpoint_sha256": "0b704a6a4e73986613e0122759c364ea313af9d849c29e2db3013b6c25f53270",
+  "best_epoch": 37,
+  "recomputed_validation": {
+    "accuracy": 0.7777943015098572,
+    "loss": 0.7015940546989441
+  },
+  "n_validation_windows": 13447
+}

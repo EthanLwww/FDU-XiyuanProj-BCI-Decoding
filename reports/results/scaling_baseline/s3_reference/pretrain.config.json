@@ -1,0 +1,1836 @@
+{
+  "maxtriallen": 5,
+  "windowlen": 3,
+  "depth": 1,
+  "block_size": 128,
+  "downsrate": 100,
+  "bandpass_filt": [
+    4,
+    40
+  ],
+  "nclass": 2,
+  "model_arch": "EEGConformer",
+  "seed": 42,
+  "batch_size": 32,
+  "subj_ids": [
+    1,
+    2,
+    5
+  ],
+  "session_num": 2,
+  "task": "ME",
+  "modeltype": "Orig",
+  "data_folder": "/Dataset2/dataset_bci_decode_lyc",
+  "data_paths": [
+    "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base",
+    "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune"
+  ],
+  "data_files": [
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R01.mat",
+      "size": 103941160,
+      "mtime_ns": 1779884681000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R02.mat",
+      "size": 104168807,
+      "mtime_ns": 1779884682000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R03.mat",
+      "size": 104263968,
+      "mtime_ns": 1779884683000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R04.mat",
+      "size": 104166934,
+      "mtime_ns": 1779884684000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R05.mat",
+      "size": 104340993,
+      "mtime_ns": 1779884686000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R06.mat",
+      "size": 104424217,
+      "mtime_ns": 1779884687000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R07.mat",
+      "size": 104016930,
+      "mtime_ns": 1779884688000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R08.mat",
+      "size": 104071001,
+      "mtime_ns": 1779884688000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R09.mat",
+      "size": 104016911,
+      "mtime_ns": 1779884689000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R10.mat",
+      "size": 104017215,
+      "mtime_ns": 1779884690000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R11.mat",
+      "size": 104053406,
+      "mtime_ns": 1779884691000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R12.mat",
+      "size": 104213751,
+      "mtime_ns": 1779884692000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R13.mat",
+      "size": 104103844,
+      "mtime_ns": 1779884693000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R14.mat",
+      "size": 103868123,
+      "mtime_ns": 1779884694000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R15.mat",
+      "size": 103988828,
+      "mtime_ns": 1779884695000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R16.mat",
+      "size": 103977975,
+      "mtime_ns": 1779884696000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R17.mat",
+      "size": 103888913,
+      "mtime_ns": 1779884697000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R18.mat",
+      "size": 103756905,
+      "mtime_ns": 1779884698000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R19.mat",
+      "size": 103860298,
+      "mtime_ns": 1779884699000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R20.mat",
+      "size": 104047981,
+      "mtime_ns": 1779884700000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R21.mat",
+      "size": 103793902,
+      "mtime_ns": 1779884701000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R22.mat",
+      "size": 103822370,
+      "mtime_ns": 1779884702000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R23.mat",
+      "size": 103744145,
+      "mtime_ns": 1779884703000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R24.mat",
+      "size": 103835385,
+      "mtime_ns": 1779884704000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R25.mat",
+      "size": 104190471,
+      "mtime_ns": 1779884705000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R26.mat",
+      "size": 104219331,
+      "mtime_ns": 1779884706000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R27.mat",
+      "size": 103853821,
+      "mtime_ns": 1779884707000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R28.mat",
+      "size": 103911700,
+      "mtime_ns": 1779884708000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R29.mat",
+      "size": 104084099,
+      "mtime_ns": 1779884710000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R30.mat",
+      "size": 104127849,
+      "mtime_ns": 1779884711000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R31.mat",
+      "size": 103901021,
+      "mtime_ns": 1779884712000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OfflineMovement/S01_OfflineMovement_R32.mat",
+      "size": 104090743,
+      "mtime_ns": 1779884713000000000,
+      "trials_before_label_filter": 24
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R01.mat",
+      "size": 62484875,
+      "mtime_ns": 1779884761000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R02.mat",
+      "size": 62464359,
+      "mtime_ns": 1779884761000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R03.mat",
+      "size": 62564554,
+      "mtime_ns": 1779884762000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R04.mat",
+      "size": 62577382,
+      "mtime_ns": 1779884762000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R05.mat",
+      "size": 62755505,
+      "mtime_ns": 1779884763000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R06.mat",
+      "size": 62709618,
+      "mtime_ns": 1779884764000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R07.mat",
+      "size": 62601800,
+      "mtime_ns": 1779884764000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Base/S01_OnlineMovement_Sess01_2class_Base_R08.mat",
+      "size": 62495153,
+      "mtime_ns": 1779884765000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R01.mat",
+      "size": 62363711,
+      "mtime_ns": 1779884765000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R02.mat",
+      "size": 62578233,
+      "mtime_ns": 1779884766000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R03.mat",
+      "size": 62597592,
+      "mtime_ns": 1779884767000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R04.mat",
+      "size": 62610139,
+      "mtime_ns": 1779884767000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R05.mat",
+      "size": 62641856,
+      "mtime_ns": 1779884768000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R06.mat",
+      "size": 62638370,
+      "mtime_ns": 1779884768000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R07.mat",
+      "size": 62655345,
+      "mtime_ns": 1779884769000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_2class_Finetune/S01_OnlineMovement_Sess01_2class_Finetune_R08.mat",
+      "size": 62666156,
+      "mtime_ns": 1779884770000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R01.mat",
+      "size": 92885126,
+      "mtime_ns": 1779884771000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R02.mat",
+      "size": 92971156,
+      "mtime_ns": 1779884772000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R03.mat",
+      "size": 93114348,
+      "mtime_ns": 1779884773000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R04.mat",
+      "size": 93015911,
+      "mtime_ns": 1779884774000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R05.mat",
+      "size": 93003707,
+      "mtime_ns": 1779884774000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R06.mat",
+      "size": 93011443,
+      "mtime_ns": 1779884775000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R07.mat",
+      "size": 92945730,
+      "mtime_ns": 1779884776000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Base/S01_OnlineMovement_Sess01_3class_Base_R08.mat",
+      "size": 92889161,
+      "mtime_ns": 1779884777000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R01.mat",
+      "size": 92817208,
+      "mtime_ns": 1779884778000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R02.mat",
+      "size": 93103287,
+      "mtime_ns": 1779884779000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R03.mat",
+      "size": 93056974,
+      "mtime_ns": 1779884780000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R04.mat",
+      "size": 92900145,
+      "mtime_ns": 1779884780000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R05.mat",
+      "size": 92958635,
+      "mtime_ns": 1779884781000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R06.mat",
+      "size": 92965341,
+      "mtime_ns": 1779884782000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R07.mat",
+      "size": 93039412,
+      "mtime_ns": 1779884783000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess01_3class_Finetune/S01_OnlineMovement_Sess01_3class_Finetune_R08.mat",
+      "size": 92978976,
+      "mtime_ns": 1779884784000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R01.mat",
+      "size": 62429581,
+      "mtime_ns": 1779884785000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R02.mat",
+      "size": 62541990,
+      "mtime_ns": 1779884785000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R03.mat",
+      "size": 62540052,
+      "mtime_ns": 1779884786000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R04.mat",
+      "size": 62528739,
+      "mtime_ns": 1779884787000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R05.mat",
+      "size": 62374487,
+      "mtime_ns": 1779884787000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R06.mat",
+      "size": 62382793,
+      "mtime_ns": 1779884788000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R07.mat",
+      "size": 62446622,
+      "mtime_ns": 1779884788000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Base/S01_OnlineMovement_Sess02_2class_Base_R08.mat",
+      "size": 62358663,
+      "mtime_ns": 1779884789000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R01.mat",
+      "size": 61705300,
+      "mtime_ns": 1779884790000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R02.mat",
+      "size": 61901783,
+      "mtime_ns": 1779884790000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R03.mat",
+      "size": 62221765,
+      "mtime_ns": 1779884791000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R04.mat",
+      "size": 62204145,
+      "mtime_ns": 1779884791000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R05.mat",
+      "size": 62062624,
+      "mtime_ns": 1779884792000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R06.mat",
+      "size": 62241717,
+      "mtime_ns": 1779884793000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R07.mat",
+      "size": 62011456,
+      "mtime_ns": 1779884793000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_2class_Finetune/S01_OnlineMovement_Sess02_2class_Finetune_R08.mat",
+      "size": 62144037,
+      "mtime_ns": 1779884794000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R01.mat",
+      "size": 92616077,
+      "mtime_ns": 1779884795000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R02.mat",
+      "size": 92774275,
+      "mtime_ns": 1779884796000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R03.mat",
+      "size": 92895010,
+      "mtime_ns": 1779884796000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R04.mat",
+      "size": 92892735,
+      "mtime_ns": 1779884797000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R05.mat",
+      "size": 92781339,
+      "mtime_ns": 1779884798000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R06.mat",
+      "size": 92967219,
+      "mtime_ns": 1779884799000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R07.mat",
+      "size": 92844659,
+      "mtime_ns": 1779884800000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Base/S01_OnlineMovement_Sess02_3class_Base_R08.mat",
+      "size": 92926167,
+      "mtime_ns": 1779884801000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R01.mat",
+      "size": 92509063,
+      "mtime_ns": 1779884801000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R02.mat",
+      "size": 92736031,
+      "mtime_ns": 1779884802000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R03.mat",
+      "size": 91938410,
+      "mtime_ns": 1779884803000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R04.mat",
+      "size": 92106249,
+      "mtime_ns": 1779884804000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R05.mat",
+      "size": 91925196,
+      "mtime_ns": 1779884805000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R06.mat",
+      "size": 91849640,
+      "mtime_ns": 1779884806000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R07.mat",
+      "size": 92499181,
+      "mtime_ns": 1779884807000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S01/OnlineMovement_Sess02_3class_Finetune/S01_OnlineMovement_Sess02_3class_Finetune_R08.mat",
+      "size": 90744393,
+      "mtime_ns": 1779884808000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R01.mat",
+      "size": 107833478,
+      "mtime_ns": 1737863006000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R02.mat",
+      "size": 107785830,
+      "mtime_ns": 1737863016000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R03.mat",
+      "size": 107705187,
+      "mtime_ns": 1737863026000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R04.mat",
+      "size": 107705117,
+      "mtime_ns": 1737863034000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R05.mat",
+      "size": 107452627,
+      "mtime_ns": 1737863044000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R06.mat",
+      "size": 107523691,
+      "mtime_ns": 1737863054000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R07.mat",
+      "size": 107528553,
+      "mtime_ns": 1737863064000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R08.mat",
+      "size": 107601809,
+      "mtime_ns": 1737863074000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R09.mat",
+      "size": 107694430,
+      "mtime_ns": 1737863084000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R10.mat",
+      "size": 107553294,
+      "mtime_ns": 1737863092000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R11.mat",
+      "size": 107674311,
+      "mtime_ns": 1737863102000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R12.mat",
+      "size": 107503319,
+      "mtime_ns": 1737863112000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R13.mat",
+      "size": 107507931,
+      "mtime_ns": 1737863122000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R14.mat",
+      "size": 107616657,
+      "mtime_ns": 1737863132000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R15.mat",
+      "size": 107626038,
+      "mtime_ns": 1737863142000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R16.mat",
+      "size": 107737184,
+      "mtime_ns": 1737863152000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R17.mat",
+      "size": 107779142,
+      "mtime_ns": 1737863160000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R18.mat",
+      "size": 107696872,
+      "mtime_ns": 1737863170000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R19.mat",
+      "size": 107655887,
+      "mtime_ns": 1737863180000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R20.mat",
+      "size": 107758159,
+      "mtime_ns": 1737863190000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R21.mat",
+      "size": 107664974,
+      "mtime_ns": 1737863200000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R22.mat",
+      "size": 107514835,
+      "mtime_ns": 1737863210000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R23.mat",
+      "size": 107569194,
+      "mtime_ns": 1737863218000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R24.mat",
+      "size": 107764392,
+      "mtime_ns": 1737863228000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R25.mat",
+      "size": 107731654,
+      "mtime_ns": 1737863238000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R26.mat",
+      "size": 107638419,
+      "mtime_ns": 1737863248000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R27.mat",
+      "size": 107656101,
+      "mtime_ns": 1737863258000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R28.mat",
+      "size": 107733053,
+      "mtime_ns": 1737863268000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R29.mat",
+      "size": 107694132,
+      "mtime_ns": 1737863278000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R30.mat",
+      "size": 107766607,
+      "mtime_ns": 1737863286000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R31.mat",
+      "size": 107632685,
+      "mtime_ns": 1737863296000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OfflineMovement/S02_OfflineMovement_R32.mat",
+      "size": 107746727,
+      "mtime_ns": 1737863306000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R01.mat",
+      "size": 62939544,
+      "mtime_ns": 1737876846000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R02.mat",
+      "size": 62932268,
+      "mtime_ns": 1737876852000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R03.mat",
+      "size": 62830347,
+      "mtime_ns": 1737876858000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R04.mat",
+      "size": 63286468,
+      "mtime_ns": 1737876864000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R05.mat",
+      "size": 62941000,
+      "mtime_ns": 1737876870000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R06.mat",
+      "size": 62933671,
+      "mtime_ns": 1737876876000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R07.mat",
+      "size": 62878227,
+      "mtime_ns": 1737876882000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Base/S02_OnlineMovement_Sess01_2class_Base_R08.mat",
+      "size": 62902397,
+      "mtime_ns": 1737876888000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R01.mat",
+      "size": 62792074,
+      "mtime_ns": 1737876894000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R02.mat",
+      "size": 62733543,
+      "mtime_ns": 1737876900000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R03.mat",
+      "size": 62856903,
+      "mtime_ns": 1737876906000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R04.mat",
+      "size": 62858497,
+      "mtime_ns": 1737876912000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R05.mat",
+      "size": 62798081,
+      "mtime_ns": 1737876918000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R06.mat",
+      "size": 62821505,
+      "mtime_ns": 1737876924000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R07.mat",
+      "size": 62852870,
+      "mtime_ns": 1737876930000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_2class_Finetune/S02_OnlineMovement_Sess01_2class_Finetune_R08.mat",
+      "size": 62725267,
+      "mtime_ns": 1737876936000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R01.mat",
+      "size": 93720628,
+      "mtime_ns": 1737876944000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R02.mat",
+      "size": 93630854,
+      "mtime_ns": 1737876954000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R03.mat",
+      "size": 93647616,
+      "mtime_ns": 1737876962000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R04.mat",
+      "size": 93567507,
+      "mtime_ns": 1737876972000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R05.mat",
+      "size": 93335305,
+      "mtime_ns": 1737876980000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R06.mat",
+      "size": 93308153,
+      "mtime_ns": 1737876988000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R07.mat",
+      "size": 93360827,
+      "mtime_ns": 1737876998000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Base/S02_OnlineMovement_Sess01_3class_Base_R08.mat",
+      "size": 93265716,
+      "mtime_ns": 1737877006000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R01.mat",
+      "size": 93488035,
+      "mtime_ns": 1737877016000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R02.mat",
+      "size": 93431433,
+      "mtime_ns": 1737877024000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R03.mat",
+      "size": 93372233,
+      "mtime_ns": 1737877032000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R04.mat",
+      "size": 93342864,
+      "mtime_ns": 1737877042000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R05.mat",
+      "size": 93331357,
+      "mtime_ns": 1737877050000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R06.mat",
+      "size": 93332623,
+      "mtime_ns": 1737877058000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R07.mat",
+      "size": 93330277,
+      "mtime_ns": 1737877068000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess01_3class_Finetune/S02_OnlineMovement_Sess01_3class_Finetune_R08.mat",
+      "size": 93320578,
+      "mtime_ns": 1737877076000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R01.mat",
+      "size": 62781446,
+      "mtime_ns": 1737877082000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R02.mat",
+      "size": 62717655,
+      "mtime_ns": 1737877088000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R03.mat",
+      "size": 62684737,
+      "mtime_ns": 1737877094000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R04.mat",
+      "size": 62661484,
+      "mtime_ns": 1737877100000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R05.mat",
+      "size": 62646363,
+      "mtime_ns": 1737877106000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R06.mat",
+      "size": 62606129,
+      "mtime_ns": 1737877112000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R07.mat",
+      "size": 62635389,
+      "mtime_ns": 1737877118000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Base/S02_OnlineMovement_Sess02_2class_Base_R08.mat",
+      "size": 62661405,
+      "mtime_ns": 1737877124000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R01.mat",
+      "size": 62201134,
+      "mtime_ns": 1737877130000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R02.mat",
+      "size": 62381509,
+      "mtime_ns": 1737877136000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R03.mat",
+      "size": 62253332,
+      "mtime_ns": 1737877142000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R04.mat",
+      "size": 62253008,
+      "mtime_ns": 1737877148000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R05.mat",
+      "size": 62189340,
+      "mtime_ns": 1737877154000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R06.mat",
+      "size": 62131124,
+      "mtime_ns": 1737877160000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R07.mat",
+      "size": 62143339,
+      "mtime_ns": 1737877166000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_2class_Finetune/S02_OnlineMovement_Sess02_2class_Finetune_R08.mat",
+      "size": 62163315,
+      "mtime_ns": 1737877172000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R01.mat",
+      "size": 93328356,
+      "mtime_ns": 1737877180000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R02.mat",
+      "size": 93169375,
+      "mtime_ns": 1737877188000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R03.mat",
+      "size": 93254862,
+      "mtime_ns": 1737877198000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R04.mat",
+      "size": 93171602,
+      "mtime_ns": 1737877206000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R05.mat",
+      "size": 93354214,
+      "mtime_ns": 1737877214000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R06.mat",
+      "size": 93329465,
+      "mtime_ns": 1737877224000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R07.mat",
+      "size": 93167330,
+      "mtime_ns": 1737877232000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Base/S02_OnlineMovement_Sess02_3class_Base_R08.mat",
+      "size": 93126026,
+      "mtime_ns": 1737877242000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R01.mat",
+      "size": 93303737,
+      "mtime_ns": 1737877250000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R02.mat",
+      "size": 93279576,
+      "mtime_ns": 1737877258000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R03.mat",
+      "size": 93033711,
+      "mtime_ns": 1737877268000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R04.mat",
+      "size": 92935586,
+      "mtime_ns": 1737877276000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R05.mat",
+      "size": 92630081,
+      "mtime_ns": 1737877286000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R06.mat",
+      "size": 92715156,
+      "mtime_ns": 1737877294000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R07.mat",
+      "size": 92662693,
+      "mtime_ns": 1737877302000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S02/OnlineMovement_Sess02_3class_Finetune/S02_OnlineMovement_Sess02_3class_Finetune_R08.mat",
+      "size": 92527861,
+      "mtime_ns": 1737877312000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R01.mat",
+      "size": 107727588,
+      "mtime_ns": 1737864844000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R02.mat",
+      "size": 107737485,
+      "mtime_ns": 1737864854000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R03.mat",
+      "size": 107685974,
+      "mtime_ns": 1737864864000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R04.mat",
+      "size": 107618437,
+      "mtime_ns": 1737864874000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R05.mat",
+      "size": 107685327,
+      "mtime_ns": 1737864884000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R06.mat",
+      "size": 107599573,
+      "mtime_ns": 1737864894000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R07.mat",
+      "size": 107689061,
+      "mtime_ns": 1737864902000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R08.mat",
+      "size": 107575236,
+      "mtime_ns": 1737864912000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R09.mat",
+      "size": 107675107,
+      "mtime_ns": 1737864922000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R10.mat",
+      "size": 107958249,
+      "mtime_ns": 1737864932000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R11.mat",
+      "size": 107586713,
+      "mtime_ns": 1737864942000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R12.mat",
+      "size": 107602875,
+      "mtime_ns": 1737864952000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R13.mat",
+      "size": 107655065,
+      "mtime_ns": 1737864962000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R14.mat",
+      "size": 107712834,
+      "mtime_ns": 1737864970000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R15.mat",
+      "size": 107842737,
+      "mtime_ns": 1737864980000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R16.mat",
+      "size": 107677248,
+      "mtime_ns": 1737864990000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R17.mat",
+      "size": 107566624,
+      "mtime_ns": 1737865000000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R18.mat",
+      "size": 107711015,
+      "mtime_ns": 1737865010000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R19.mat",
+      "size": 107545915,
+      "mtime_ns": 1737865020000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R20.mat",
+      "size": 107643408,
+      "mtime_ns": 1737865030000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R21.mat",
+      "size": 107778806,
+      "mtime_ns": 1737865040000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R22.mat",
+      "size": 107716877,
+      "mtime_ns": 1737865048000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R23.mat",
+      "size": 107684710,
+      "mtime_ns": 1737865058000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R24.mat",
+      "size": 107616508,
+      "mtime_ns": 1737865074000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R25.mat",
+      "size": 107769898,
+      "mtime_ns": 1737865084000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R26.mat",
+      "size": 107772326,
+      "mtime_ns": 1737865092000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R27.mat",
+      "size": 107700727,
+      "mtime_ns": 1737865102000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R28.mat",
+      "size": 107747033,
+      "mtime_ns": 1737865112000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R29.mat",
+      "size": 107768807,
+      "mtime_ns": 1737865122000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R30.mat",
+      "size": 107724190,
+      "mtime_ns": 1737865132000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R31.mat",
+      "size": 70877324,
+      "mtime_ns": 1737865138000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OfflineMovement/S05_OfflineMovement_R32.mat",
+      "size": 10111408,
+      "mtime_ns": 1737865142000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R01.mat",
+      "size": 62681388,
+      "mtime_ns": 1737881750000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R02.mat",
+      "size": 62702526,
+      "mtime_ns": 1737881756000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R03.mat",
+      "size": 62728140,
+      "mtime_ns": 1737881762000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R04.mat",
+      "size": 62626702,
+      "mtime_ns": 1737881768000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R05.mat",
+      "size": 62751632,
+      "mtime_ns": 1737881774000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R06.mat",
+      "size": 62645845,
+      "mtime_ns": 1737881780000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R07.mat",
+      "size": 62610962,
+      "mtime_ns": 1737881786000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Base/S05_OnlineMovement_Sess01_2class_Base_R08.mat",
+      "size": 62663581,
+      "mtime_ns": 1737881792000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R01.mat",
+      "size": 62731833,
+      "mtime_ns": 1737881798000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R02.mat",
+      "size": 62649489,
+      "mtime_ns": 1737881804000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R03.mat",
+      "size": 62609424,
+      "mtime_ns": 1737881810000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R04.mat",
+      "size": 62655038,
+      "mtime_ns": 1737881816000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R05.mat",
+      "size": 62615531,
+      "mtime_ns": 1737881822000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R06.mat",
+      "size": 62502904,
+      "mtime_ns": 1737881828000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R07.mat",
+      "size": 62747522,
+      "mtime_ns": 1737881834000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_2class_Finetune/S05_OnlineMovement_Sess01_2class_Finetune_R08.mat",
+      "size": 62639504,
+      "mtime_ns": 1737881840000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R01.mat",
+      "size": 93196483,
+      "mtime_ns": 1737881848000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R02.mat",
+      "size": 93286856,
+      "mtime_ns": 1737881856000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R03.mat",
+      "size": 93156125,
+      "mtime_ns": 1737881866000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R04.mat",
+      "size": 93273747,
+      "mtime_ns": 1737881874000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R05.mat",
+      "size": 93095764,
+      "mtime_ns": 1737881882000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R06.mat",
+      "size": 93179424,
+      "mtime_ns": 1737881892000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R07.mat",
+      "size": 93197756,
+      "mtime_ns": 1737881900000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Base/S05_OnlineMovement_Sess01_3class_Base_R08.mat",
+      "size": 93492156,
+      "mtime_ns": 1737881910000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R01.mat",
+      "size": 93112230,
+      "mtime_ns": 1737881918000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R02.mat",
+      "size": 93076295,
+      "mtime_ns": 1737881926000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R03.mat",
+      "size": 92974224,
+      "mtime_ns": 1737881936000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R04.mat",
+      "size": 93156573,
+      "mtime_ns": 1737881944000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R05.mat",
+      "size": 93159602,
+      "mtime_ns": 1737881952000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R06.mat",
+      "size": 93087926,
+      "mtime_ns": 1737881962000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R07.mat",
+      "size": 93059695,
+      "mtime_ns": 1737881970000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess01_3class_Finetune/S05_OnlineMovement_Sess01_3class_Finetune_R08.mat",
+      "size": 93088324,
+      "mtime_ns": 1737881980000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R01.mat",
+      "size": 62389486,
+      "mtime_ns": 1737881984000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R02.mat",
+      "size": 62363298,
+      "mtime_ns": 1737881990000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R03.mat",
+      "size": 62322639,
+      "mtime_ns": 1737881996000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R04.mat",
+      "size": 62313670,
+      "mtime_ns": 1737882002000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R05.mat",
+      "size": 62266609,
+      "mtime_ns": 1737882008000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R06.mat",
+      "size": 62260137,
+      "mtime_ns": 1737882014000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R07.mat",
+      "size": 62321913,
+      "mtime_ns": 1737882020000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Base/S05_OnlineMovement_Sess02_2class_Base_R08.mat",
+      "size": 62448915,
+      "mtime_ns": 1737882026000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R01.mat",
+      "size": 62353515,
+      "mtime_ns": 1737882032000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R02.mat",
+      "size": 62354022,
+      "mtime_ns": 1737882038000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R03.mat",
+      "size": 62250638,
+      "mtime_ns": 1737882044000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R04.mat",
+      "size": 62248360,
+      "mtime_ns": 1737882050000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R05.mat",
+      "size": 62229509,
+      "mtime_ns": 1737882054000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R06.mat",
+      "size": 62394822,
+      "mtime_ns": 1737882060000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R07.mat",
+      "size": 62333833,
+      "mtime_ns": 1737882066000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_2class_Finetune/S05_OnlineMovement_Sess02_2class_Finetune_R08.mat",
+      "size": 62250323,
+      "mtime_ns": 1737882072000000000,
+      "trials_before_label_filter": 20
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R01.mat",
+      "size": 92761734,
+      "mtime_ns": 1737882082000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R02.mat",
+      "size": 92734921,
+      "mtime_ns": 1737882090000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R03.mat",
+      "size": 92802766,
+      "mtime_ns": 1737882098000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R04.mat",
+      "size": 92584704,
+      "mtime_ns": 1737882108000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R05.mat",
+      "size": 92699894,
+      "mtime_ns": 1737882116000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R06.mat",
+      "size": 92719705,
+      "mtime_ns": 1737882124000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R07.mat",
+      "size": 92625720,
+      "mtime_ns": 1737882134000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Base/S05_OnlineMovement_Sess02_3class_Base_R08.mat",
+      "size": 92678845,
+      "mtime_ns": 1737882142000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R01.mat",
+      "size": 92780399,
+      "mtime_ns": 1737882150000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R02.mat",
+      "size": 92829460,
+      "mtime_ns": 1737882158000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R03.mat",
+      "size": 92675587,
+      "mtime_ns": 1737882168000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R04.mat",
+      "size": 92772835,
+      "mtime_ns": 1737882176000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R05.mat",
+      "size": 92809348,
+      "mtime_ns": 1737882184000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R06.mat",
+      "size": 92786206,
+      "mtime_ns": 1737882194000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R07.mat",
+      "size": 92785405,
+      "mtime_ns": 1737882202000000000,
+      "trials_before_label_filter": 30
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_lyc/S05/OnlineMovement_Sess02_3class_Finetune/S05_OnlineMovement_Sess02_3class_Finetune_R08.mat",
+      "size": 92719550,
+      "mtime_ns": 1737882210000000000,
+      "trials_before_label_filter": 30
+    }
+  ],
+  "srate": 1024,
+  "class_counts": {
+    "1": 2432,
+    "2": 2432
+  },
+  "data_shape": [
+    4864,
+    128,
+    5120
+  ],
+  "selected_file_count": 288,
+  "filter_bank": "off",
+  "broadband_residual": "off",
+  "gpu_memory_limit_mib": 32768,
+  "input_storage": "CPU",
+  "epochs": 300,
+  "bands": [],
+  "chans": 128,
+  "samples": 300,
+  "frontend_version": 1,
+  "input_shape": [
+    128,
+    300,
+    1
+  ],
+  "epochs_requested": 300,
+  "dropout": 0.5,
+  "tensorflow_version": "2.17.0",
+  "status": "complete",
+  "n_trials": 4864,
+  "learning_rate": 0.0005,
+  "parameter_count": 379306,
+  "trainable_parameter_count": 379226,
+  "trainable_weight_layers": [
+    "temporal_conv",
+    "spatial_conv",
+    "batch_normalization",
+    "projection_conv",
+    "layer_normalization",
+    "multi_head_attention",
+    "layer_normalization_1",
+    "dense",
+    "dense_1",
+    "dense_2",
+    "dense_3",
+    "dense_4"
+  ],
+  "n_train_windows": 17185,
+  "n_validation_windows": 4211,
+  "epochs_completed": 84,
+  "best_val_accuracy": 0.8698646426200867,
+  "checkpoint_sha256": "1d3644efbe946a9840460d760848d62c612f2fa25f466a57ad5f3544391740b7"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "verified",
+  "group": "s3_reference",
+  "phase": "pretrain",
+  "checkpoint_sha256": "1d3644efbe946a9840460d760848d62c612f2fa25f466a57ad5f3544391740b7",
+  "best_epoch": 46,
+  "recomputed_validation": {
+    "accuracy": 0.8698646426200867,
+    "loss": 0.4893159568309784
+  },
+  "n_validation_windows": 4211,
+  "reused": true,
+  "new_streaming_loader_validated_against_original_checkpoint": true
+}

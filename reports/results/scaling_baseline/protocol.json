@@ -1,0 +1,76 @@
+{
+  "seed": 42,
+  "groups": {
+    "s3_reference": [
+      1,
+      2,
+      5
+    ],
+    "s5": [
+      1,
+      2,
+      3,
+      4,
+      5
+    ],
+    "s10": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "s20": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ]
+  },
+  "target": 21,
+  "task": "ME",
+  "labels": [
+    1,
+    4
+  ],
+  "model": "EEGModels_tf.EEGConformer",
+  "depth": 1,
+  "window_seconds": 3,
+  "pretrain_dropout": 0.5,
+  "finetune_dropout": 0.65,
+  "pretrain_max_epochs": 300,
+  "finetune_max_epochs": 100,
+  "batch_size": 32,
+  "cache_dtype": "float32",
+  "preprocessing_chunk_windows": 32,
+  "prefetch_batches": 1,
+  "preprocessing_workers": 4,
+  "gpu_limit_mib": 16384,
+  "finetune_session": 2,
+  "finetune_data": "2class_Base + 3class_Base",
+  "data_root": "/Dataset2/dataset_bci_decode_kxy",
+  "selection": "first maximum validation accuracy",
+  "split": "80/20 trials, seed42 permutation of cohort trials",
+  "independent_test_set": false
+}

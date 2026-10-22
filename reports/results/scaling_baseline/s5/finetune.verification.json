@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "group": "s5",
+  "phase": "finetune",
+  "checkpoint_sha256": "ea1699f4f64ae6ec6dc68f2b1e9682c42de8d8b47f835f9f2d1d722172837c49",
+  "best_epoch": 75,
+  "recomputed_validation": {
+    "accuracy": 0.5882353186607361,
+    "loss": 0.6772926449775696
+  },
+  "n_validation_windows": 68
+}

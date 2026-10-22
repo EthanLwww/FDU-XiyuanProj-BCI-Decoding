@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "group": "s10",
+  "phase": "finetune",
+  "checkpoint_sha256": "fb245fa3378c57df40b70c4fb800308f4da1056ed57ebd9d04fea170d759cfc7",
+  "best_epoch": 1,
+  "recomputed_validation": {
+    "accuracy": 0.6470588445663452,
+    "loss": 0.982352077960968
+  },
+  "n_validation_windows": 68
+}

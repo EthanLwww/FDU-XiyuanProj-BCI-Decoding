@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "group": "s3_reference",
+  "phase": "finetune",
+  "checkpoint_sha256": "8873c6c6bfb1526f887823d2adf23e2dec7284f03561a850c487784181b86001",
+  "best_epoch": 71,
+  "recomputed_validation": {
+    "accuracy": 0.5588235259056091,
+    "loss": 0.6849280595779419
+  },
+  "n_validation_windows": 68
+}

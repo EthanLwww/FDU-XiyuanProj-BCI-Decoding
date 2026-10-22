@@ -1,0 +1,24 @@
+{
+  "status": "verified",
+  "group": "s5",
+  "phase": "finetune",
+  "checkpoint_sha256": "120ea0e094fbf9dbc319aa55b3d813d6954e349a09580c3193c1bd38a55034b1",
+  "best_epoch": 1,
+  "recomputed_validation": {
+    "accuracy": 0.6617646813392639,
+    "loss": 0.810030460357666
+  },
+  "n_validation_windows": 68,
+  "band_weights": [
+    0.24146750569343567,
+    0.20568905770778656,
+    0.2704892158508301,
+    0.2823541760444641
+  ],
+  "broadband_residual": {
+    "mode": "gated",
+    "alpha": 0.22997592389583588,
+    "initial_alpha": 0.1
+  },
+  "baseline_split_sha256": "cc893d45972eea97c7cee65207b04e18b586993c0ad8b077ac1d882849ed40b1"
+}

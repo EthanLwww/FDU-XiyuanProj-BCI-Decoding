@@ -1,0 +1,124 @@
+{
+  "model_arch": "EEGConformer",
+  "nclass": 2,
+  "chans": 128,
+  "samples": 300,
+  "depth": 1,
+  "filter_bank": "weighted",
+  "broadband_residual": "gated",
+  "bands": [
+    [
+      4,
+      8
+    ],
+    [
+      8,
+      13
+    ],
+    [
+      13,
+      30
+    ],
+    [
+      30,
+      40
+    ]
+  ],
+  "frontend_version": 1,
+  "input_shape": [
+    128,
+    300,
+    5
+  ],
+  "baseline_split_source": "/home/kxy/LYC/experiments/conformer_scaling_S21_20261021/s3_reference/pretrain.split.npz",
+  "baseline_split_sha256": "65a432a007f7ca3d078aea2c0d1b95a6d8d80896134ad58d455fcad127adac6a",
+  "cuda_visible_devices": "0",
+  "windowlen": 3,
+  "downsrate": 100,
+  "srate": 1024,
+  "maxtriallen": 5,
+  "block_size": 128,
+  "bandpass_filt": [
+    4,
+    40
+  ],
+  "task": "ME",
+  "session_num": 2,
+  "subjects": [
+    1,
+    2,
+    5
+  ],
+  "pretraining_subjects": [
+    1,
+    2,
+    5
+  ],
+  "target_subject": 21,
+  "seed": 42,
+  "batch_size": 32,
+  "dropout": 0.5,
+  "epochs_requested": 300,
+  "learning_rate": 0.0005,
+  "gpu_memory_limit_mib": 16384,
+  "input_storage": "file shards, numpy.memmap, batch32, prefetch1",
+  "shuffle": "numpy.default_rng(seed+epoch), one complete permutation per epoch",
+  "dtype": "float32 (same model-input precision as original TensorFlow cast)",
+  "n_trials": 4864,
+  "n_train_windows": 17185,
+  "n_validation_windows": 4211,
+  "n_train_trials": 3891,
+  "n_validation_trials": 973,
+  "class_counts": {
+    "1": 2432,
+    "2": 2432
+  },
+  "tensorflow_version": "2.17.0",
+  "status": "complete",
+  "data_root": "/Dataset2/dataset_bci_decode_kxy/data",
+  "cache_manifests": [
+    "/home/kxy/LYC/experiments/conformer_scaling_S21_filterbank_residual_20261021/cache/S01/ready.json",
+    "/home/kxy/LYC/experiments/conformer_scaling_S21_filterbank_residual_20261021/cache/S02/ready.json",
+    "/home/kxy/LYC/experiments/conformer_scaling_S21_filterbank_residual_20261021/cache/S05/ready.json"
+  ],
+  "parameter_count": 412751,
+  "trainable_parameter_count": 412351,
+  "trainable_weight_layers": [
+    "broadband_temporal",
+    "band_0_temporal",
+    "band_1_temporal",
+    "band_2_temporal",
+    "band_3_temporal",
+    "broadband_spatial",
+    "band_0_spatial",
+    "band_1_spatial",
+    "band_2_spatial",
+    "band_3_spatial",
+    "batch_normalization_4",
+    "batch_normalization",
+    "batch_normalization_1",
+    "batch_normalization_2",
+    "batch_normalization_3",
+    "broadband_projection",
+    "band_0_projection",
+    "band_1_projection",
+    "band_2_projection",
+    "band_3_projection",
+    "broadband_alignment",
+    "band_fusion",
+    "broadband_residual",
+    "layer_normalization",
+    "multi_head_attention",
+    "layer_normalization_1",
+    "dense",
+    "dense_1",
+    "dense_2",
+    "dense_3",
+    "dense_4"
+  ],
+  "epochs_completed": 85,
+  "elapsed_seconds": 3307.938390101306,
+  "peak_rss_mib": 18841.51953125,
+  "best_val_accuracy": 0.8812633752822876,
+  "checkpoint_sha256": "a491ae3a2ec29cdf8630d276994c5432d199fb0b7afb9d431438ff50f3f26dc0"
+}
