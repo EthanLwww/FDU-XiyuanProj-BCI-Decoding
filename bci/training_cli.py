@@ -2,7 +2,7 @@
 import argparse
 from pathlib import Path
 
-from filter_bank import FILTER_BANK_MODES, BROADBAND_RESIDUAL_MODES, validate_residual_mode
+from bci.filter_bank import FILTER_BANK_MODES, BROADBAND_RESIDUAL_MODES, validate_residual_mode
 
 
 def positive_int(value):
@@ -74,8 +74,8 @@ def experiment_name(args):
 def run_training(argv=None, multi_subject=False):
     # Keep --help and argument validation independent of TensorFlow startup.
     args = parse_training_args(argv, multi_subject)
-    from Functions import generate_paths, load_and_filter_data, train_models
-    root = Path(__file__).resolve().parent
+    from bci.Functions import generate_paths, load_and_filter_data, train_models
+    root = Path(__file__).resolve().parents[1]
     data_folder = args.data_dir or (root / "Data" if (root / "Data").is_dir() else Path("/Dataset4/bci"))
     save_folder = args.save_dir or root / "Save"
     save_folder.mkdir(parents=True, exist_ok=True)

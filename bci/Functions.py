@@ -188,10 +188,10 @@ def configure_finetuning(model, policy="legacy_last12"):
 def train_models(data, label, save_name, params):
     """Train with trial-level splitting and an optional independent-band frontend."""
     from pathlib import Path
-    from filter_bank import DEFAULT_BANDS, preprocess_windows, split_trial_indices, validate_residual_mode
-    from FilterBankModels_tf import build_model, get_band_weights, get_residual_info
-    from training_artifacts import write_json, validate_checkpoint, checkpoint_hash
-    from training_callbacks import BestAccuracyCheckpoint, EpochHistory
+    from bci.filter_bank import DEFAULT_BANDS, preprocess_windows, split_trial_indices, validate_residual_mode
+    from bci.FilterBankModels_tf import build_model, get_band_weights, get_residual_info
+    from bci.training_artifacts import write_json, validate_checkpoint, checkpoint_hash
+    from bci.training_callbacks import BestAccuracyCheckpoint, EpochHistory
 
     params = dict(params)
     mode = params.get('filter_bank', 'off')
@@ -227,7 +227,7 @@ def train_models(data, label, save_name, params):
     if segment_size > data.shape[2]:
         raise ValueError('Window length exceeds trial length.')
     if params.get('preprocessed_cache'):
-        from experiment_window_cache import load_cached_split
+        from bci.experiment_window_cache import load_cached_split
         X_train, Y_train, I_train = load_cached_split(
             params['preprocessed_cache'], data, label, params, train_idx, mode, residual_mode)
         X_validate, Y_validate, I_validate = load_cached_split(

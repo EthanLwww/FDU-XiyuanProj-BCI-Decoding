@@ -9,7 +9,7 @@ import time
 import numpy as np
 from scipy.io import loadmat
 from scipy.signal import resample
-from filter_bank import preprocess_windows, split_trial_indices
+from bci.filter_bank import preprocess_windows, split_trial_indices
 
 DATA_ROOT = Path(os.environ.get('BCI_DATA_ROOT', '/Dataset2/dataset_bci_decode_kxy/data'))
 TRANSFORM_VERSION = 'original-car-resample-butter-zscore-f32-v1'

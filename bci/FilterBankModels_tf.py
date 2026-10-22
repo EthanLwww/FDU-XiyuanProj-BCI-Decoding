@@ -3,8 +3,8 @@ import tensorflow as tf
 from tensorflow.keras import layers as L
 from tensorflow.keras.constraints import max_norm
 
-from EEGModels_tf import EEGNet, EEGConformer
-from filter_bank import DEFAULT_BANDS, FILTER_BANK_MODES, validate_residual_mode
+from bci.EEGModels_tf import EEGNet, EEGConformer
+from bci.filter_bank import DEFAULT_BANDS, FILTER_BANK_MODES, validate_residual_mode
 
 
 @tf.keras.utils.register_keras_serializable(package="FingerBCI")

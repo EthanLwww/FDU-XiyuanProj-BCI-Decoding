@@ -9,7 +9,7 @@
 - 先划分 trial 再切分窗口，避免重叠窗口跨训练与验证集。
 - 大规模实验使用磁盘缓存、内存映射和分批加载，保存逐轮指标、配置和模型验证记录。
 
-实际训练入口通过 `EEGModels_tf.py` 与 `FilterBankModels_tf.py` 构建模型。`EEGConformer_tf.py` 和 `EEG-Conformer-main/` 保留既有参考实现，不能直接当作本轮实验的模型定义。
+实际训练入口通过 `bci/EEGModels_tf.py` 与 `bci/FilterBankModels_tf.py` 构建模型。`reference_models/EEGConformer_tf.py` 和 `EEG-Conformer-main/` 保留既有参考实现，不能直接当作本轮实验的模型定义。
 
 ## 环境与使用
 
@@ -17,14 +17,14 @@
 
 ```bash
 python -m pip install -r requirements-filterbank.txt
-python main_model_training.py --help
-python main_multi_subject_training.py --help
+python train.py --help
+python run_experiments.py --help
 ```
 
 多被试预训练示例，将数据根目录指向包含 `S01` 等目录的位置：
 
 ```bash
-python main_multi_subject_training.py 1,2,5 2 2 ME Orig EEGConformer \
+python train.py 1,2,5 2 2 ME Orig EEGConformer \
   --filter-bank weighted --broadband-residual gated \
   --depth 1 --windowlen 3 --seed 42 \
   --data-dir /Dataset2/dataset_bci_decode_kxy/data \
@@ -37,9 +37,25 @@ python main_multi_subject_training.py 1,2,5 2 2 ME Orig EEGConformer \
 | 频带 | `weighted` | `off` |
 | 频带＋残差 | `weighted` | `gated` |
 
-微调使用 `Finetune` 和 `--init-model` 指定兼容的预训练权重。详细说明见 [频带前端](FILTER_BANK.md) 和 [宽带残差](BROADBAND_RESIDUAL.md)。
+微调使用 `Finetune` 和 `--init-model` 指定兼容的预训练权重。详细说明见 [频带前端](docs/FILTER_BANK.md) 和 [宽带残差](docs/BROADBAND_RESIDUAL.md)。
 
-`run_conformer_ablation.py`、`repeated_experiments.py` 和 `scaling_experiments/` 保存已完成实验的执行与核验流程。默认路径、GPU 编号和参考 checkpoint 对应实验服务器，迁移环境时需要调整。
+根目录只保留三个启动脚本：
+
+| 入口 | 用途 |
+|---|---|
+| `train.py` | 单被试、多被试预训练与微调；subjects 为单个 ID 或逗号分隔的 ID |
+| `run_experiments.py` | 消融、重复实验、数据量对照及结果比较 |
+| `main_online_processing.py` | BCPy2000 在线 EEGNet 解码入口，由 BCPy2000 加载 |
+
+```bash
+python run_experiments.py ablation --help
+python run_experiments.py repeats --help
+python run_experiments.py scaling --help
+python run_experiments.py scaling-residual --help
+python run_experiments.py compare --help
+```
+
+实验实现位于 `experiment_runners/` 和 `scaling_experiments/`，共用 `bci/` 内的模型、预处理和训练工具。默认路径、GPU 编号和参考 checkpoint 对应实验服务器，迁移环境时需要调整。模型结构、数据划分、超参数和已有结果不因本次目录整理而改变。目录职责与旧命令迁移见 [目录说明](docs/REPOSITORY_LAYOUT.md)。
 
 ## 已完成实验
 
@@ -63,17 +79,13 @@ python main_multi_subject_training.py 1,2,5 2 2 ME Orig EEGConformer \
 
 ## 回归验证
 
-`tests/` 与 `scaling_experiments/test_streaming.py` 是正式回归测试，不是临时测试产物。使用合成数据与临时目录，不启动完整数据集实验。
+`tests/` 统一存放模型、训练入口、流式加载和源码快照的正式回归测试。使用合成数据与临时目录，不启动完整数据集实验。
 
 ```bash
 CUDA_VISIBLE_DEVICES=-1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 \
   TF_NUM_INTRAOP_THREADS=2 TF_NUM_INTEROP_THREADS=1 MPLBACKEND=Agg \
   python -m unittest discover -s tests -v
 
-cd scaling_experiments
-CUDA_VISIBLE_DEVICES=-1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 \
-  TF_NUM_INTRAOP_THREADS=2 TF_NUM_INTEROP_THREADS=1 MPLBACKEND=Agg \
-  python -m unittest test_streaming -v
 ```
 
 ## 上游来源与许可
@@ -82,9 +94,9 @@ CUDA_VISIBLE_DEVICES=-1 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=2 \
 
 以下为上游来源说明：
 
-Optional four-band EEGNet/EEGConformer frontend: see [FILTER_BANK.md](FILTER_BANK.md) for switches, reproducible comparisons, checkpoints and verification.
+Optional four-band EEGNet/EEGConformer frontend: see [FILTER_BANK.md](docs/FILTER_BANK.md) for switches, reproducible comparisons, checkpoints and verification.
 
-Optional broadband residual branch: see [BROADBAND_RESIDUAL.md](BROADBAND_RESIDUAL.md) for fixed-addition and learnable-gate ablations.
+Optional broadband residual branch: see [BROADBAND_RESIDUAL.md](docs/BROADBAND_RESIDUAL.md) for fixed-addition and learnable-gate ablations.
 
 The upstream repository provides scripts used for the study: “EEG-based Brain-Computer Interface Enables Real-time Robotic Hand Control at Individual Finger Level”.
 

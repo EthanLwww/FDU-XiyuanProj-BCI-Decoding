@@ -7,7 +7,7 @@ from scipy import signal, stats
 
 class StreamingTests(unittest.TestCase):
     def test_orphan_trial_end_cannot_shift_subsequent_trial_boundaries(self):
-        from streaming_data import pair_trial_events
+        from scaling_experiments.streaming_data import pair_trial_events
         events = [('Target', 10, 4, 0), ('TrialEnd', 20, 1, 1),
                   ('TrialEnd', 22, 1, 2), ('Target', 30, 1, 3), ('TrialEnd', 40, 1, 4)]
         trials, ignored = pair_trial_events(events)
@@ -15,7 +15,7 @@ class StreamingTests(unittest.TestCase):
         self.assertEqual(ignored, [dict(event_index=2, sample_zero_based=22, reason='TrialEnd without an open Target')])
 
     def test_chunk_transform_equals_original_and_excludes_short_trials(self):
-        from streaming_data import transform_trials
+        from scaling_experiments.streaming_data import transform_trials
         x = np.random.default_rng(4).normal(size=(3, 5, 5120))
         x[1, :, 3000:] = np.nan
         x[2, :, 4000:] = np.nan
@@ -39,7 +39,7 @@ class StreamingTests(unittest.TestCase):
         np.testing.assert_array_equal(np.concatenate([c[2] for c in chunks]), starts)
 
     def test_disk_batch_preserves_order_duplicates_and_incomplete_last_batch(self):
-        from streaming_data import WindowStore, epoch_batches, save_json
+        from scaling_experiments.streaming_data import WindowStore, epoch_batches, save_json
         with tempfile.TemporaryDirectory() as td:
             paths = []
             truth = np.arange(7*2*3, dtype=np.float32).reshape(7, 2, 3, 1)
@@ -62,8 +62,8 @@ class StreamingTests(unittest.TestCase):
             del store
 
     def test_residual_transform_matches_filter_bank_preprocessing_and_keeps_five_planes(self):
-        from streaming_data import transform_trials
-        from filter_bank import preprocess_windows
+        from scaling_experiments.streaming_data import transform_trials
+        from bci.filter_bank import preprocess_windows
         x = np.random.default_rng(12).normal(size=(2, 128, 5120))
         labels = np.array([1, 2])
         chunks = list(transform_trials(x, labels, chunk_size=1, mode='weighted',
@@ -81,7 +81,7 @@ class StreamingTests(unittest.TestCase):
         np.testing.assert_allclose(actual, expected, rtol=0, atol=0)
 
     def test_residual_window_store_reads_five_planes_and_keeps_tail_batch(self):
-        from streaming_data import WindowStore, epoch_batches, save_json
+        from scaling_experiments.streaming_data import WindowStore, epoch_batches, save_json
         with tempfile.TemporaryDirectory() as td:
             p = Path(td) / 'S01'
             p.mkdir()

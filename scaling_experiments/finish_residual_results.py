@@ -2,18 +2,13 @@
 import hashlib
 import json
 from pathlib import Path
-import shutil
 import tarfile
-from compare_scaling_models import ROOT, BASELINE, compare
-from streaming_data import save_json
+from bci.source_snapshot import snapshot_sources
+from scaling_experiments.compare_scaling_models import ROOT, BASELINE, compare
 
 def main():
     assert json.loads((ROOT/'suite.status.json').read_text())['status']=='complete'
-    analysis=ROOT/'analysis_source';analysis.mkdir(exist_ok=True)
-    for name in ['compare_scaling_models.py','finish_residual_results.py','monitor_residual.py']:
-        shutil.copy2(Path(__file__).parent/name,analysis/name)
-    save_json(ROOT/'analysis_source_sha256.json',
-              {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in analysis.glob('*.py')})
+    snapshot_sources(ROOT/'analysis_source')
     compare(ROOT,BASELINE)
     archive=ROOT/'comparison_bundle.tar.gz'
     with tarfile.open(archive,'w:gz') as tar:

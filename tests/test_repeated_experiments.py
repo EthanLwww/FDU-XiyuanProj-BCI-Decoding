@@ -10,9 +10,9 @@ import numpy as np
 
 class WindowCacheTests(unittest.TestCase):
     def test_cached_training_and_finetuning_preserve_split_and_seed(self):
-        from experiment_window_cache import build_window_cache
-        from Functions import train_models
-        from filter_bank import split_trial_indices
+        from bci.experiment_window_cache import build_window_cache
+        from bci.Functions import train_models
+        from bci.filter_bank import split_trial_indices
         data = np.random.default_rng(8).normal(size=(8, 4, 500)) * 1e-6
         labels = np.tile([1, 2], 4)
         params = dict(srate=100, downsrate=100, windowlen=3, block_size=128,
@@ -38,11 +38,11 @@ class WindowCacheTests(unittest.TestCase):
                 np.testing.assert_array_equal(split["val_trial_indices"], val)
 
     def test_cache_matches_existing_preprocessing_and_window_order(self):
-        self.assertIsNotNone(importlib.util.find_spec("experiment_window_cache"),
+        self.assertIsNotNone(importlib.util.find_spec("bci.experiment_window_cache"),
                              "A reusable, equivalent preprocessing cache is required")
-        from experiment_window_cache import build_window_cache, load_cached_split
-        from Functions import segment_data
-        from filter_bank import split_trial_indices, preprocess_windows
+        from bci.experiment_window_cache import build_window_cache, load_cached_split
+        from bci.Functions import segment_data
+        from bci.filter_bank import split_trial_indices, preprocess_windows
         from scipy.signal import resample
         data = np.random.default_rng(7).normal(size=(8, 4, 500)) * 1e-6
         data[1, :, 350:] = np.nan
@@ -70,9 +70,9 @@ class WindowCacheTests(unittest.TestCase):
                 load_cached_split(Path(directory), data * 2, labels, params, np.arange(4), "off", "off")
 
     def test_repeat_summary_uses_one_checkpoint_per_seed(self):
-        self.assertIsNotNone(importlib.util.find_spec("repeated_experiments"),
+        self.assertIsNotNone(importlib.util.find_spec("experiment_runners.repeats"),
                              "Repeated experiment summarization is required")
-        from repeated_experiments import summarize_histories
+        from experiment_runners.repeats import summarize_histories
         rows = summarize_histories([
             dict(seed=42, variant="baseline", phase="finetune",
                  history=dict(loss=[1., .6, .5], accuracy=[.5, .6, .7],

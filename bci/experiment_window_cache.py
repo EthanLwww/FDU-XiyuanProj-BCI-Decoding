@@ -4,7 +4,7 @@ import json
 from pathlib import Path
 import numpy as np
 from scipy.signal import resample
-from filter_bank import preprocess_windows
+from bci.filter_bank import preprocess_windows
 
 
 def cache_signature(data, labels, params):
@@ -24,7 +24,7 @@ def cache_signature(data, labels, params):
 
 
 def build_window_cache(data, labels, params, directory):
-    from training_artifacts import write_json
+    from bci.training_artifacts import write_json
     directory = Path(directory)
     directory.mkdir(parents=True, exist_ok=True)
     signature = cache_signature(data, labels, params)

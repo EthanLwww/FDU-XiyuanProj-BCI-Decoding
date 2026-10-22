@@ -37,9 +37,9 @@ def summarize_histories(items):
 def verify_variant(seed_root, variant, cache_root):
     import numpy as np
     import tensorflow as tf
-    from experiment_window_cache import load_cached_split
-    from training_artifacts import checkpoint_hash
-    import FilterBankModels_tf
+    from bci.experiment_window_cache import load_cached_split
+    from bci.training_artifacts import checkpoint_hash
+    from bci import FilterBankModels_tf
     results = []
     for phase in ["pretrain", "finetune"]:
         path = seed_root / variant / (phase + ".h5")
@@ -74,7 +74,7 @@ def verify_variant(seed_root, variant, cache_root):
 
 
 def worker(root, seed, variant):
-    from run_conformer_ablation import run
+    from experiment_runners.ablation import run
     seed_root = root / f"seed_{seed}"
     try:
         run(seed_root, variant, seed=seed, preprocessed_root=root / "preprocessed")
@@ -87,7 +87,7 @@ def worker(root, seed, variant):
 
 def collect(root):
     import numpy as np
-    from training_artifacts import checkpoint_hash
+    from bci.training_artifacts import checkpoint_hash
     items = []
     for seed in SEEDS:
         for phase in ["pretrain", "finetune"]:
@@ -223,9 +223,9 @@ def suite(root):
                 seed, variant = job
                 log = (root / f"seed_{seed}_{variant}.log").open("a")
                 process = subprocess.Popen(
-                    [sys.executable, "-u", str(Path(__file__).resolve()), "worker",
+                    [sys.executable, "-u", "-m", "experiment_runners.repeats", "worker",
                      "--root", str(root), "--seed", str(seed), "--variant", variant],
-                    cwd=Path(__file__).resolve().parent, env=dict(env, CUDA_VISIBLE_DEVICES=str(gpu)),
+                    cwd=Path(__file__).resolve().parents[1], env=dict(env, CUDA_VISIBLE_DEVICES=str(gpu)),
                     stdout=log, stderr=subprocess.STDOUT, start_new_session=True)
                 active[gpu] = (job, process, log)
         write_status(status, dict(status="running", completed=completed, pending=jobs,
@@ -244,6 +244,7 @@ if __name__ == "__main__":
     parser.add_argument("--seed", type=int, choices=SEEDS)
     parser.add_argument("--variant", choices=VARIANTS)
     args = parser.parse_args()
+    args.root = args.root.resolve()
     if args.command == "worker":
         if args.seed is None or args.variant is None:
             parser.error("worker requires --seed and --variant")

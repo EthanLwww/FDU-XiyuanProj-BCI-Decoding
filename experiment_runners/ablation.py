@@ -15,8 +15,8 @@ DATA_ROOT = "/Dataset2/dataset_bci_decode_lyc"
 
 def prepare(root):
     import numpy as np
-    from Functions import generate_paths, load_and_filter_data
-    from training_artifacts import write_json
+    from bci.Functions import generate_paths, load_and_filter_data
+    from bci.training_artifacts import write_json
     cache = root / "data"
     cache.mkdir(parents=True, exist_ok=True)
     for phase, subjects, modeltype in [("pretrain", [1, 2, 5], "Orig"),
@@ -58,8 +58,8 @@ def run(root, variant, seed=None, preprocessed_root=None):
     for device in tf.config.list_physical_devices("GPU"):
         tf.config.set_logical_device_configuration(
             device, [tf.config.LogicalDeviceConfiguration(memory_limit=32768)])
-    from Functions import train_models
-    from training_artifacts import write_json
+    from bci.Functions import train_models
+    from bci.training_artifacts import write_json
     out = root / variant
     out.mkdir(parents=True, exist_ok=True)
     status = out / "status.json"
@@ -106,7 +106,7 @@ def plot(root):
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
-    from training_artifacts import write_json, checkpoint_hash
+    from bci.training_artifacts import write_json, checkpoint_hash
     labels = {"baseline": "Broadband baseline", "filterbank": "Filter bank",
               "filterbank_residual": "Filter bank + broadband residual"}
     colors = dict(zip(VARIANTS, ["#377eb8", "#ff7f00", "#4daf4a"]))

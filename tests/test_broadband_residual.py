@@ -9,10 +9,10 @@ import unittest
 import numpy as np
 import tensorflow as tf
 
-import filter_bank as signals
-import FilterBankModels_tf as models
-import training_cli as cli
-from training_artifacts import validate_checkpoint
+from bci import filter_bank as signals
+from bci import FilterBankModels_tf as models
+from bci import training_cli as cli
+from bci.training_artifacts import validate_checkpoint
 
 
 class BroadbandResidualTests(unittest.TestCase):
@@ -135,7 +135,7 @@ class BroadbandResidualTests(unittest.TestCase):
                 validate_checkpoint(path, dict(old_config, broadband_residual="gated"))
 
     def test_training_and_finetuning_export_best_gate(self):
-        from Functions import train_models
+        from bci.Functions import train_models
         data = np.random.default_rng(25).normal(size=(12, 4, 500))
         labels = np.tile([1, 2], 6)
         params = dict(maxtriallen=5, windowlen=3, block_size=128, downsrate=100, srate=100,

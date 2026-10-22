@@ -14,9 +14,9 @@ import tensorflow as tf
 
 class TrainingIntegrationTests(unittest.TestCase):
     def cli(self):
-        self.assertIsNotNone(importlib.util.find_spec("training_cli"),
+        self.assertIsNotNone(importlib.util.find_spec("bci.training_cli"),
                              "shared filter-bank CLI has not been implemented")
-        return importlib.import_module("training_cli")
+        return importlib.import_module("bci.training_cli")
 
     def test_legacy_cli_and_experiment_names(self):
         cli = self.cli()
@@ -40,7 +40,7 @@ class TrainingIntegrationTests(unittest.TestCase):
 
     def test_filterbank_rejects_missing_or_incompatible_checkpoint_metadata(self):
         self.cli()
-        artifacts = importlib.import_module("training_artifacts")
+        artifacts = importlib.import_module("bci.training_artifacts")
         expected = {"model_arch": "EEGNet", "nclass": 2, "filter_bank": "weighted",
                     "bands": [[4., 8.], [8., 13.], [13., 30.], [30., 40.]],
                     "chans": 4, "samples": 300, "downsrate": 100,
@@ -62,8 +62,8 @@ class TrainingIntegrationTests(unittest.TestCase):
 
     def test_one_epoch_training_and_finetuning_save_reusable_artifacts(self):
         self.cli()
-        from Functions import train_models
-        from FilterBankModels_tf import get_band_weights
+        from bci.Functions import train_models
+        from bci.FilterBankModels_tf import get_band_weights
         rng = np.random.default_rng(31)
         data = rng.normal(size=(12, 4, 500))
         labels = np.tile([1, 2], 6)
@@ -124,10 +124,10 @@ class TrainingIntegrationTests(unittest.TestCase):
                 savemat(folder / "run.mat", {"eeg": {"data": eeg, "fsample": 100.}, "event": events})
             outputs = []
             for script, subjects, mode, residual in (
-                ("main_model_training.py", "1", "off", "off"),
-                ("main_multi_subject_training.py", "1,2", "concat", "off"),
-                ("main_model_training.py", "1", "weighted", "gated"),
-                ("main_multi_subject_training.py", "1,2", "mean", "fixed"),
+                ("train.py", "1", "off", "off"),
+                ("train.py", "1,2", "concat", "off"),
+                ("train.py", "1", "weighted", "gated"),
+                ("train.py", "1,2", "mean", "fixed"),
             ):
                 command = [sys.executable, str(root / script), subjects, "1", "2", "ME", "Orig",
                            "EEGNet", "--filter-bank", mode, "--seed", "42", "--epochs", "1",
@@ -135,7 +135,7 @@ class TrainingIntegrationTests(unittest.TestCase):
                            "--broadband-residual", residual]
                 completed = subprocess.run(command, capture_output=True, text=True, timeout=120, env=os.environ)
                 self.assertEqual(completed.returncode, 0, completed.stdout[-3000:] + completed.stderr[-3000:])
-                args = self.cli().parse_training_args(command[2:], multi_subject="multi" in script)
+                args = self.cli().parse_training_args(command[2:], multi_subject=True)
                 checkpoint = save_root / self.cli().experiment_name(args)
                 self.assertTrue(checkpoint.is_file())
                 config = json.loads(checkpoint.with_suffix(".config.json").read_text())
@@ -147,7 +147,7 @@ class TrainingIntegrationTests(unittest.TestCase):
             self.assertEqual(len(set(outputs)), 4)
 
     def test_best_checkpoint_keeps_best_epoch_not_last(self):
-        from training_callbacks import BestAccuracyCheckpoint
+        from bci.training_callbacks import BestAccuracyCheckpoint
         model = tf.keras.Sequential([tf.keras.layers.Input((1,)), tf.keras.layers.Dense(1, use_bias=False)])
         with tempfile.TemporaryDirectory() as directory:
             path = Path(directory) / "best.h5"

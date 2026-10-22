@@ -6,9 +6,9 @@ from pathlib import Path
 import tempfile
 import numpy as np
 from scipy.signal import resample
-from Functions import load_and_filter_data, segment_data
-from filter_bank import preprocess_windows
-from streaming_data import DATA_ROOT, decode_mat, transform_trials, save_json
+from bci.Functions import load_and_filter_data, segment_data
+from bci.filter_bank import preprocess_windows
+from scaling_experiments.streaming_data import DATA_ROOT, decode_mat, transform_trials, save_json
 
 results=[]
 for rel in ['S01/OfflineMovement/S01_OfflineMovement_R01.mat',

@@ -8,8 +8,8 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from streaming_data import save_json
-from training_artifacts import checkpoint_hash
+from scaling_experiments.streaming_data import save_json
+from bci.training_artifacts import checkpoint_hash
 
 GROUPS={'s3_reference':[1,2,5], 's5':list(range(1,6)),
         's10':list(range(1,11)), 's20':list(range(1,21))}

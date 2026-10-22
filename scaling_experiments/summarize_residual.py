@@ -8,9 +8,9 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from run_scaling_residual import GROUPS, ROOT
-from streaming_data import save_json
-from training_artifacts import checkpoint_hash
+from scaling_experiments.run_scaling_residual import GROUPS, ROOT
+from scaling_experiments.streaming_data import save_json
+from bci.training_artifacts import checkpoint_hash
 
 BASELINE_ROOT = Path('/home/kxy/LYC/experiments/conformer_scaling_S21_20261021')
 

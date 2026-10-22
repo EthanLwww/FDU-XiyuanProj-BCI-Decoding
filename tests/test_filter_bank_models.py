@@ -7,7 +7,7 @@ from pathlib import Path
 
 import numpy as np
 import tensorflow as tf
-from EEGModels_tf import EEGNet, EEGConformer
+from bci.EEGModels_tf import EEGNet, EEGConformer
 
 
 class FilterBankModelTests(unittest.TestCase):
@@ -16,9 +16,9 @@ class FilterBankModelTests(unittest.TestCase):
         tf.keras.utils.set_random_seed(17)
 
     def module(self):
-        self.assertIsNotNone(importlib.util.find_spec("FilterBankModels_tf"),
+        self.assertIsNotNone(importlib.util.find_spec("bci.FilterBankModels_tf"),
                              "filter-bank models have not been implemented")
-        return importlib.import_module("FilterBankModels_tf")
+        return importlib.import_module("bci.FilterBankModels_tf")
 
     def test_disabled_models_preserve_existing_predictions(self):
         fb = self.module()

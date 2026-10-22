@@ -7,7 +7,7 @@
 
 ## 实验开关
 
-单被试和多被试入口都接受 `--filter-bank off|mean|weighted|concat`，默认 `off`。
+统一的 `train.py` 入口接受 `--filter-bank off|mean|weighted|concat`，默认 `off`。
 
 | 模式 | 预处理与前端 | 融合 |
 |---|---|---|
@@ -30,19 +30,19 @@
 cd /home/kxy/LYC/Finger-BCI-Decoding-main
 
 # 当前模型对照
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank off --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank off --seed 42
 
 # 开启学习频带权重
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --seed 42
 
 # 等权对照：检验学习权重是否优于固定均值
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank mean --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank mean --seed 42
 
 # 拼接对照
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank concat --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank concat --seed 42
 
 # 多被试；将架构名换为 EEGNet 即可使用 EEGNet
-/home/kxy/anaconda3/bin/python main_multi_subject_training.py "1,2,3" 2 2 ME Orig EEGNet --filter-bank weighted --seed 42
+/home/kxy/anaconda3/bin/python train.py "1,2,3" 2 2 ME Orig EEGNet --filter-bank weighted --seed 42
 ```
 
 默认数据目录为项目 `Data`（存在时），否则 `/Dataset4/bci`；使用 `--data-dir` 覆盖。
@@ -58,10 +58,10 @@ off 不带 FB 后缀；不传新参数时单被试保留旧文件名。多被试
 ## 微调
 
 ```bash
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Finetune EEGConformer --filter-bank weighted --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Finetune EEGConformer --filter-bank weighted --seed 42
 
 # 从指定多被试模型微调
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Finetune EEGConformer --filter-bank weighted --seed 42 --init-model /absolute/path/to/multi_subject_Orig.h5
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Finetune EEGConformer --filter-bank weighted --seed 42 --init-model /absolute/path/to/multi_subject_Orig.h5
 ```
 
 默认寻找同一配置名称的 Orig 模型，`--init-model` 可显式指定来源。
@@ -80,8 +80,8 @@ off 不带 FB 后缀；不传新参数时单被试保留旧文件名。多被试
 加载时先导入自定义层注册：
 ```python
 import tensorflow as tf
-import FilterBankModels_tf
-from filter_bank import preprocess_windows
+from bci import FilterBankModels_tf
+from bci.filter_bank import preprocess_windows
 
 model = tf.keras.models.load_model("Save/your_model.h5", compile=False)
 # windows 必须已按训练方式完成 CAR、窗口提取和重采样；形状 (N,C,300)
@@ -95,7 +95,7 @@ probabilities = model(x, training=False).numpy()
 
 四频带不增加滑窗数；输入/分支激活相对相同 float32 单带约四倍，整体显存取决于模型和 batch。预处理按最多 128 个窗口一批，结果为 float32，但仍会完整保留最终训练/验证数组。内存不足时减小 batch 只能缓解模型显存，不能消除全量数组内存。
 
-本次接入离线单/多被试训练、微调和独立模型推理；现有 BCPy2000 在线入口仍为单带 EEGNet，不能直接加载四带模型。独立 `EEGConformer_tf.py` 不参与本训练入口。
+本次接入离线单/多被试训练、微调和独立模型推理；现有 BCPy2000 在线入口仍为单带 EEGNet，不能直接加载四带模型。独立 `reference_models/EEGConformer_tf.py` 不参与本训练入口。
 
 ## 验证
 

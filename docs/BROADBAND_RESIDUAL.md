@@ -38,19 +38,19 @@ P 是无偏置线性投影，输出宽度与滤波器组融合结果匹配。Lay
 cd /home/kxy/LYC/Finger-BCI-Decoding-main
 
 # 原整频带模型
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank off --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank off --seed 42
 
 # 四子带，不加整频带残差
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual off --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual off --seed 42
 
 # 四子带 + 固定相加
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual fixed --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual fixed --seed 42
 
 # 四子带 + 可学习残差（推荐尝试）
-/home/kxy/anaconda3/bin/python main_model_training.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual gated --seed 42
+/home/kxy/anaconda3/bin/python train.py 20 2 2 ME Orig EEGConformer --filter-bank weighted --broadband-residual gated --seed 42
 
 # 多被试、EEGNet 也采用相同开关
-/home/kxy/anaconda3/bin/python main_multi_subject_training.py "1,2,3" 2 2 ME Orig EEGNet --filter-bank weighted --broadband-residual gated --seed 42
+/home/kxy/anaconda3/bin/python train.py "1,2,3" 2 2 ME Orig EEGNet --filter-bank weighted --broadband-residual gated --seed 42
 ```
 
 fixed 与 gated 的区别同时包含是否学习系数和初始残差强度（1 与 0.1）。若要严格隔离系数学习本身的贡献，还需固定 0.1 的额外对照；不要把当前两个模式的差异全部归因于“学到了更好的权重”。
@@ -68,9 +68,9 @@ fixed 与 gated 的区别同时包含是否学习系数和初始残差强度（1
 
 ```python
 import tensorflow as tf
-import FilterBankModels_tf
-from FilterBankModels_tf import get_residual_info
-from filter_bank import preprocess_windows
+from bci import FilterBankModels_tf
+from bci.FilterBankModels_tf import get_residual_info
+from bci.filter_bank import preprocess_windows
 
 model = tf.keras.models.load_model("your_model.h5", compile=False)
 # windows 已完成 CAR、3 秒窗口提取和 100 Hz 重采样，形状 (N,C,300)

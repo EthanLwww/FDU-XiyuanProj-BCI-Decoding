@@ -3,8 +3,8 @@ import json
 from pathlib import Path
 import subprocess
 import time
-from run_scaling_residual import ROOT
-from streaming_data import save_json
+from scaling_experiments.run_scaling_residual import ROOT
+from scaling_experiments.streaming_data import save_json
 
 peaks={}
 while True:

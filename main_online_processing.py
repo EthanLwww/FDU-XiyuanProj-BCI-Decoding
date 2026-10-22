@@ -19,7 +19,7 @@ from scipy.signal import resample
 from BCPy2000.GenericSignalProcessing import BciGenericSignalProcessing
 
 # EEGNet-specific imports
-from EEGModels_tf import EEGNet
+from bci.EEGModels_tf import EEGNet
 
 #################################################################
 #################################################################

@@ -8,9 +8,9 @@ from scipy import signal, stats
 
 class FilterBankTests(unittest.TestCase):
     def module(self):
-        self.assertIsNotNone(importlib.util.find_spec("filter_bank"),
+        self.assertIsNotNone(importlib.util.find_spec("bci.filter_bank"),
                              "filter-bank frontend has not been implemented")
-        return importlib.import_module("filter_bank")
+        return importlib.import_module("bci.filter_bank")
 
     def test_sine_waves_land_in_their_own_bands(self):
         fb = self.module()

@@ -75,3 +75,6 @@ experiments/
 
 # Published reports/results are curated metrics, histories and plots only.
 # Permanent regression tests in tests/ and test_streaming.py are versioned.
+
+# Archived machine-local helpers; not part of the supported project CLI.
+.local-tools/

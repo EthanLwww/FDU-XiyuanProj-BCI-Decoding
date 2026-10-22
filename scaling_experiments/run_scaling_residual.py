@@ -4,14 +4,14 @@ import hashlib
 import json
 import os
 from pathlib import Path
-import resource
 import shutil
 import subprocess
 import sys
 import time
 import traceback
 
-from streaming_data import DATA_ROOT, WindowStore, files_for_subject, prepare_subject, save_json
+from bci.source_snapshot import snapshot_sources
+from scaling_experiments.streaming_data import DATA_ROOT, WindowStore, files_for_subject, prepare_subject, save_json
 
 ROOT = Path('/home/kxy/LYC/experiments/conformer_scaling_S21_filterbank_residual_20261021')
 BASELINE_ROOT = Path('/home/kxy/LYC/experiments/conformer_scaling_S21_20261021')
@@ -51,17 +51,18 @@ def env_for(gpu=''):
 
 
 def train(root, group, phase):
+    import resource
     import numpy as np
     import tensorflow as tf
     for device in tf.config.list_physical_devices('GPU'):
         tf.config.set_logical_device_configuration(device, [tf.config.LogicalDeviceConfiguration(memory_limit=16384)])
     if not tf.config.list_physical_devices('GPU'):
         raise RuntimeError('GPU required for this training run')
-    from Functions import configure_finetuning
-    from FilterBankModels_tf import build_model, get_band_weights, get_residual_info
-    from streaming_data import tf_dataset
-    from training_artifacts import checkpoint_hash, validate_checkpoint
-    from training_callbacks import BestAccuracyCheckpoint, EpochHistory
+    from bci.Functions import configure_finetuning
+    from bci.FilterBankModels_tf import build_model, get_band_weights, get_residual_info
+    from scaling_experiments.streaming_data import tf_dataset
+    from bci.training_artifacts import checkpoint_hash, validate_checkpoint
+    from bci.training_callbacks import BestAccuracyCheckpoint, EpochHistory
     checkpoint = root/group/f'{phase}.h5'
     checkpoint.parent.mkdir(parents=True, exist_ok=True)
     verification = checkpoint.with_suffix('.verification.json')
@@ -214,18 +215,7 @@ def suite(root):
     lock=(root/'suite.lock').open('w')
     fcntl.flock(lock, fcntl.LOCK_EX|fcntl.LOCK_NB)
     audit(root)
-    source=root/'source'
-    source.mkdir(exist_ok=True)
-    # Retain every executed source revision before updating the resumable suite.
-    old_hashes = root/'source_sha256.json'
-    if old_hashes.exists():
-        snapshot = root/'source_revisions'/f'before_resume_{int(time.time())}'
-        shutil.copytree(source, snapshot)
-        shutil.copy2(old_hashes, snapshot/'source_sha256.json')
-    for file in Path(__file__).parent.glob('*.py'):
-        if file.resolve() != (source/file.name).resolve():
-            shutil.copy2(file, source/file.name)
-    save_json(root/'source_sha256.json', {p.name:hashlib.sha256(p.read_bytes()).hexdigest() for p in source.glob('*.py')})
+    source = snapshot_sources(root)
     pending=[21]+list(range(1,21))
     prep, active, complete, failures = {}, {}, [], {}
     train_pending=list(GROUPS)
@@ -259,8 +249,8 @@ def suite(root):
             while pending and len(prep)<4:
                 sid=pending.pop(0)
                 log=(root/f'prepare_S{sid:02d}.log').open('a')
-                proc=subprocess.Popen([sys.executable,str(source/'run_scaling_residual.py'),'prepare','--root',str(root),'--subject',str(sid)],
-                                      stdout=log,stderr=subprocess.STDOUT,env=env_for())
+                proc=subprocess.Popen([sys.executable,'-m','scaling_experiments.run_scaling_residual','prepare','--root',str(root),'--subject',str(sid)],
+                                      cwd=source,stdout=log,stderr=subprocess.STDOUT,env=env_for())
                 prep[sid]=(proc,log)
             for gpu,(group,proc,log) in list(active.items()):
                 if proc.poll() is not None:
@@ -279,8 +269,8 @@ def suite(root):
                     required=GROUPS[group]+[21]
                     if all((root/'cache'/f'S{s:02d}'/'baseline_verified.json').exists() for s in required):
                         log=(root/f'{group}.log').open('a')
-                        proc=subprocess.Popen([sys.executable,str(source/'run_scaling_residual.py'),'worker','--root',str(root),'--group',group],
-                                              stdout=log,stderr=subprocess.STDOUT,env=env_for(gpu))
+                        proc=subprocess.Popen([sys.executable,'-m','scaling_experiments.run_scaling_residual','worker','--root',str(root),'--group',group],
+                                              cwd=source,stdout=log,stderr=subprocess.STDOUT,env=env_for(gpu))
                         active[gpu]=(group,proc,log)
                         train_pending.remove(group)
                         break
@@ -288,7 +278,7 @@ def suite(root):
                 preparing=list(prep),pending_subjects=pending,training={str(k):v[0] for k,v in active.items()},
                 pending_groups=train_pending,completed=complete,failures=failures))
             time.sleep(10)
-        subprocess.run([sys.executable,str(source/'summarize_residual.py'),'--root',str(root)],check=True,env=env_for())
+        subprocess.run([sys.executable,'-m','scaling_experiments.summarize_residual','--root',str(root)],check=True,cwd=source,env=env_for())
         save_json(root/'suite.status.json',dict(status='complete',groups=complete,elapsed_seconds=time.time()-started))
     except BaseException:
         save_json(root/'suite.status.json',dict(status='failed',traceback=traceback.format_exc(),
@@ -305,11 +295,12 @@ if __name__=='__main__':
     p.add_argument('--group',choices=list(GROUPS))
     p.add_argument('--phase',choices=['pretrain','finetune'])
     a=p.parse_args()
+    a.root = a.root.resolve()
     if a.command=='prepare':
         prepare_verified(a.root, a.subject)
     elif a.command=='worker':
         for phase in ['pretrain', 'finetune']:
-            subprocess.run([sys.executable,__file__,'train','--root',str(a.root),'--group',a.group,'--phase',phase],check=True)
+            subprocess.run([sys.executable,'-m','scaling_experiments.run_scaling_residual','train','--root',str(a.root),'--group',a.group,'--phase',phase],check=True,cwd=Path(__file__).resolve().parents[1])
     elif a.command=='train':
         train(a.root,a.group,a.phase)
     elif a.command=='audit':

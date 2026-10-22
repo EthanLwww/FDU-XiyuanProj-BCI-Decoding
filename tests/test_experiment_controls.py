@@ -6,14 +6,12 @@ import tempfile
 import unittest
 import numpy as np
 import tensorflow as tf
-import training_cli
-import training_callbacks
-
-
+from bci import training_cli
+from bci import training_callbacks
 class ExperimentControlTests(unittest.TestCase):
     def test_matched_finetuning_keeps_same_dense_weights_plus_plugin_gates(self):
-        from Functions import configure_finetuning
-        from FilterBankModels_tf import build_model
+        from bci.Functions import configure_finetuning
+        from bci.FilterBankModels_tf import build_model
         expected = [((160, 40), (40,)), ((560, 256), (256,)),
                     ((256, 32), (32,)), ((32, 2), (2,))]
         for mode, residual, extra in [("off", "off", 0), ("weighted", "off", 1),
@@ -53,7 +51,7 @@ class ExperimentControlTests(unittest.TestCase):
             self.assertGreaterEqual(progress["elapsed_seconds"], 0)
 
     def test_depth_one_reaches_saved_model_and_config(self):
-        from Functions import train_models
+        from bci.Functions import train_models
         data = np.random.default_rng(1).normal(size=(8, 4, 500))
         labels = np.tile([1,2], 4)
         params = dict(maxtriallen=5,windowlen=3,block_size=128,downsrate=100,srate=100,

@@ -5,19 +5,19 @@ import sys
 import tempfile
 from pathlib import Path
 
-from run_scaling_residual import ROOT, env_for, prepare_verified
+from scaling_experiments.run_scaling_residual import ROOT, env_for, prepare_verified
 
 if '--configured' not in sys.argv:
-    raise SystemExit(subprocess.call([sys.executable, __file__, '--configured'], env=env_for(0)))
+    raise SystemExit(subprocess.call([sys.executable, '-m', 'scaling_experiments.preflight_residual', '--configured'], env=env_for(0), cwd=Path(__file__).resolve().parents[1]))
 
 import numpy as np
 import tensorflow as tf
 for device in tf.config.list_physical_devices('GPU'):
     tf.config.set_logical_device_configuration(device, [tf.config.LogicalDeviceConfiguration(memory_limit=16384)])
-from Functions import configure_finetuning
-from FilterBankModels_tf import build_model
-from filter_bank import preprocess_windows
-from streaming_data import DATA_ROOT, WindowStore, decode_mat, transform_trials, tf_dataset, save_json
+from bci.Functions import configure_finetuning
+from bci.FilterBankModels_tf import build_model
+from bci.filter_bank import preprocess_windows
+from scaling_experiments.streaming_data import DATA_ROOT, WindowStore, decode_mat, transform_trials, tf_dataset, save_json
 from scipy.signal import resample
 
 def main():
