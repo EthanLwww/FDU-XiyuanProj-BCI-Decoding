@@ -1,0 +1,454 @@
+{
+  "cache": "/home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/cache/ME_S01_4-40",
+  "n_selected_trials": 384,
+  "n_eligible_trials": 384,
+  "n_windows": 12645,
+  "no_window_trials": [],
+  "short_trials": [
+    {
+      "trial_id": "S01_OfflineMovement_R04.mat:12",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 90368,
+      "source_end": 95360,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R04.mat:19",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 140800,
+      "source_end": 145792,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R05.mat:12",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 90368,
+      "source_end": 95360,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R05.mat:19",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 140800,
+      "source_end": 145792,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R07.mat:18",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 133632,
+      "source_end": 138624,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R08.mat:13",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 97536,
+      "source_end": 102528,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R08.mat:20",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 147968,
+      "source_end": 152960,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R13.mat:10",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 76032,
+      "source_end": 81024,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R13.mat:17",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 126464,
+      "source_end": 131456,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R14.mat:15",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 112000,
+      "source_end": 116992,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R15.mat:5",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 39936,
+      "source_end": 44928,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R15.mat:12",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 90368,
+      "source_end": 95360,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R16.mat:12",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 90368,
+      "source_end": 95360,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R20.mat:17",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 126336,
+      "source_end": 131328,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R23.mat:5",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 39936,
+      "source_end": 44928,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R23.mat:20",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 147968,
+      "source_end": 152960,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R24.mat:5",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 39936,
+      "source_end": 44928,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R26.mat:11",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 83200,
+      "source_end": 88192,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R27.mat:0",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 3968,
+      "source_end": 8960,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R27.mat:16",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 119296,
+      "source_end": 124288,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R28.mat:22",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 162432,
+      "source_end": 167424,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R29.mat:1",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 11136,
+      "source_end": 16128,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R29.mat:8",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 61568,
+      "source_end": 66560,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R29.mat:15",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 112000,
+      "source_end": 116992,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R30.mat:4",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 32768,
+      "source_end": 37760,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R31.mat:0",
+      "label": 1,
+      "valid_raw_samples": 4992,
+      "source_start": 3968,
+      "source_end": 8960,
+      "n_windows": 32
+    },
+    {
+      "trial_id": "S01_OfflineMovement_R32.mat:11",
+      "label": 4,
+      "valid_raw_samples": 4992,
+      "source_start": 83200,
+      "source_end": 88192,
+      "n_windows": 32
+    }
+  ],
+  "source_files": [
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R01.mat",
+      "size": 103941160,
+      "mtime_ns": 1779884681000000000,
+      "sha256": "bd7b4c4df05c0a158ca97c171278161c0f5da3de9f6a29c43cdf8b02d1de73ee",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R02.mat",
+      "size": 104168807,
+      "mtime_ns": 1779884682000000000,
+      "sha256": "1b2e1e30f463cb96b71caf7f27d43276c0ee69d8a6995044921fbe3df6e49b2d",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R03.mat",
+      "size": 104263968,
+      "mtime_ns": 1779884683000000000,
+      "sha256": "6e9d5e5549cbe9495f5426888040019c272d2a245bfca9af727956bd23fa67d2",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R04.mat",
+      "size": 104166934,
+      "mtime_ns": 1779884684000000000,
+      "sha256": "9b10acaee23796f8d5bd4da10bac772c560492e64c29bcb2e1595b5bbb83b5c4",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R05.mat",
+      "size": 104340993,
+      "mtime_ns": 1779884686000000000,
+      "sha256": "0c9b0de7e93e003ce925c560eefa3f26617b71d3aab10851033a4c47b6d1a125",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R06.mat",
+      "size": 104424217,
+      "mtime_ns": 1779884687000000000,
+      "sha256": "09bd2e5fa54faf668e17e3f0c0a86ab3be8d62f8541aa242f92c9bcad0790c42",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R07.mat",
+      "size": 104016930,
+      "mtime_ns": 1779884688000000000,
+      "sha256": "d1b93649d004705490b7da1b756bb36f5a6b88dd059add4c42ff55b16c748efc",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R08.mat",
+      "size": 104071001,
+      "mtime_ns": 1779884688000000000,
+      "sha256": "0bc8058560d0218f0c82b40a04a4df0444d757d25245b66bc0aa1349698188d6",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R09.mat",
+      "size": 104016911,
+      "mtime_ns": 1779884689000000000,
+      "sha256": "98f94e5b1294bdd3156c6d0a2da853fcc6362e0c4ffbe0361495abc5b3cca2a2",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R10.mat",
+      "size": 104017215,
+      "mtime_ns": 1779884690000000000,
+      "sha256": "35cfee507f192f2c837bfe743483ee6444e35b2d85be319759e949b62d60ed5c",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R11.mat",
+      "size": 104053406,
+      "mtime_ns": 1779884691000000000,
+      "sha256": "92851d49c1a33bb6e29877a8dc24a14fdd162eda1382e791da4275fd8ac3a39d",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R12.mat",
+      "size": 104213751,
+      "mtime_ns": 1779884692000000000,
+      "sha256": "9b55f008d61720fc39751c1547c27bbbc64209cf625fec4cc54f814242c96bfc",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R13.mat",
+      "size": 104103844,
+      "mtime_ns": 1779884693000000000,
+      "sha256": "1222468217791ec42589c5b90ef4d47158b217ae45eb6213ff2286a6b389b967",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R14.mat",
+      "size": 103868123,
+      "mtime_ns": 1779884694000000000,
+      "sha256": "490bdf33057032192cdb1cf0d3b29635a3895755f61b9cf73d50b56ec0edcac5",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R15.mat",
+      "size": 103988828,
+      "mtime_ns": 1779884695000000000,
+      "sha256": "88d233828ca94c13db588105654ffb9a6500d0d2c6abfafa5e02b960b47a9631",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R16.mat",
+      "size": 103977975,
+      "mtime_ns": 1779884696000000000,
+      "sha256": "078b2eb59889cc85d7c726a1be2b4366639b4879c6e6a66d625c4480acee24d0",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R17.mat",
+      "size": 103888913,
+      "mtime_ns": 1779884697000000000,
+      "sha256": "848468742adceeb9fe5e54322c10c2e20aeacec286fabc26583561407613f71b",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R18.mat",
+      "size": 103756905,
+      "mtime_ns": 1779884698000000000,
+      "sha256": "6231001c4ce7143902ba2a2508f2b6bed204d763829edfd82832821832b0f306",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R19.mat",
+      "size": 103860298,
+      "mtime_ns": 1779884699000000000,
+      "sha256": "d50af8b7271c0023b3c10962786f2ba3c74e3bb270b89f1ebe708039ee237f90",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R20.mat",
+      "size": 104047981,
+      "mtime_ns": 1779884700000000000,
+      "sha256": "0f97770af2fec5fee6e294bb038819bf2e191e3ebfc677b179aa06a88353589d",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R21.mat",
+      "size": 103793902,
+      "mtime_ns": 1779884701000000000,
+      "sha256": "f7e82a7ca14051206746898100e098d828bd294776abffa93bf4f0e67855afba",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R22.mat",
+      "size": 103822370,
+      "mtime_ns": 1779884702000000000,
+      "sha256": "8953310cc3f4cd4729a8203aca2be33af1fc28e3507a66da0ec78ddc7537617f",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R23.mat",
+      "size": 103744145,
+      "mtime_ns": 1779884703000000000,
+      "sha256": "51c9a6767608456480b616aef3328473e250a91ace0d342956f6cf350622444b",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R24.mat",
+      "size": 103835385,
+      "mtime_ns": 1779884704000000000,
+      "sha256": "94e98eb3c23ad1d902de2a1bbe967cbc37b1dc6e99974380ed7a8e6712196f05",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R25.mat",
+      "size": 104190471,
+      "mtime_ns": 1779884705000000000,
+      "sha256": "cd1596b8fc00394ac06f857ea48883db4e7f762cf2dab2639f11bb42d3e35175",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R26.mat",
+      "size": 104219331,
+      "mtime_ns": 1779884706000000000,
+      "sha256": "1850061c16f858c1fa57ff03d6e4ba8132b480ab7c8fdf31efcb6f8b2f2d3c8c",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R27.mat",
+      "size": 103853821,
+      "mtime_ns": 1779884707000000000,
+      "sha256": "bb59394e3e49b8b4a3debdcccfce1ec880147db8a56f3c2120a9ed682f30c3b3",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R28.mat",
+      "size": 103911700,
+      "mtime_ns": 1779884708000000000,
+      "sha256": "39b37c720cb719dccdcca03bed13650e5da94594de0a785686e2cc31c72b79f2",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R29.mat",
+      "size": 104084099,
+      "mtime_ns": 1779884710000000000,
+      "sha256": "9c588d166df0d694c8413a9b5c97add0b41ccda3d0017289bd2a4975e629dc5c",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R30.mat",
+      "size": 104127849,
+      "mtime_ns": 1779884711000000000,
+      "sha256": "01f0ccfb5e3efca17cf0484b0916711541410204f58a4bf8340574861cfd5e19",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R31.mat",
+      "size": 103901021,
+      "mtime_ns": 1779884712000000000,
+      "sha256": "e9cd560c46fac3480749dd2205660aaec6072f6fbc4c640df80e47338ce838d5",
+      "ignored_orphan_ends": []
+    },
+    {
+      "path": "/Dataset2/dataset_bci_decode_kxy/data/S01/OfflineMovement/S01_OfflineMovement_R32.mat",
+      "size": 104090743,
+      "mtime_ns": 1779884713000000000,
+      "sha256": "54af24d50100fe04c26a96a8b0f3d3dfd910ad3f738347827d7657bd74b4a1f0",
+      "ignored_orphan_ends": []
+    }
+  ],
+  "exact_stride_seconds": 0.125,
+  "complete_trial_windows": 33,
+  "cache_sha256": "ea2f12d45bb6bd02d725e2e889f917907cd4d2269735234eb6d591033f3d5b5b"
+}

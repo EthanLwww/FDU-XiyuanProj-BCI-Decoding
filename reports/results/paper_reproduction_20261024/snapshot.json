@@ -1,0 +1,75 @@
+{
+  "created_utc": "20261023T184157Z",
+  "experiment_root": "/home/kxy/LYC/experiments/paper_reproduction_fixed_20261024",
+  "conditions": 2,
+  "origins": {
+    "S01_ME_4-40": "/home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S01_ME_4-40",
+    "S02_ME_4-40": "/home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S02_ME_4-40"
+  },
+  "progress": {
+    "S05_ME_4-40": {
+      "state": "training",
+      "subject": 5,
+      "task": "ME",
+      "fold": 3,
+      "epoch": 77,
+      "max_epochs": 300,
+      "elapsed_fold_seconds": 364.4668125519529,
+      "metrics": {
+        "loss": 0.2238032966852188,
+        "accuracy": 0.9075520634651184,
+        "val_loss": 0.5552861094474792,
+        "val_accuracy": 0.7476325631141663,
+        "lr": 0.0002500000118743628
+      }
+    },
+    "S01_ME_4-40": {
+      "state": "complete",
+      "completed_folds": 5
+    },
+    "S02_ME_4-40": {
+      "state": "complete",
+      "completed_folds": 5
+    },
+    "runs/S04_ME_1-4_4-40": {
+      "state": "training",
+      "subject": 4,
+      "task": "ME",
+      "fold": 4,
+      "epoch": 14,
+      "max_epochs": 300,
+      "elapsed_fold_seconds": 41.901579319965094,
+      "metrics": {
+        "loss": 0.5096163749694824,
+        "accuracy": 0.7495265007019043,
+        "val_loss": 0.5939921736717224,
+        "val_accuracy": 0.6851325631141663,
+        "lr": 0.0010000000474974513
+      }
+    },
+    "runs/S03_ME_1-4_4-40": {
+      "state": "training",
+      "subject": 3,
+      "task": "ME",
+      "fold": 4,
+      "epoch": 63,
+      "max_epochs": 300,
+      "elapsed_fold_seconds": 177.24381588585675,
+      "metrics": {
+        "loss": 0.17780232429504395,
+        "accuracy": 0.9305161237716675,
+        "val_loss": 0.8436245918273926,
+        "val_accuracy": 0.6974431872367859,
+        "lr": 0.0005000000237487257
+      }
+    }
+  },
+  "processes": "1377370 bash -c cd /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/code && mkdir -p /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S05_ME_4-40 && CUDA_VISIBLE_DEVICES=1 OMP_NUM_THREADS=4 OPENBLAS_NUM_THREADS=2 nohup /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_reproduction --data-root /Dataset2/dataset_bci_decode_kxy/data --cache /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/cache --out /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S05_ME_4-40 --subject 5 --task ME --labels 1 4 --band 4 40 --epochs 300 --fold-limit 5 > /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S05_ME_4-40/run.log 2>&1 < /dev/null &\n1377372 /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_reproduction --data-root /Dataset2/dataset_bci_decode_kxy/data --cache /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/cache --out /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/S05_ME_4-40 --subject 5 --task ME --labels 1 4 --band 4 40 --epochs 300 --fold-limit 5\n1407219 bash -c cd /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/code && PAPER_REPORT_PYTHON=/home/kxy/anaconda3/bin/python nohup /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_suite --root /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024 --data-root /Dataset2/dataset_bci_decode_kxy/data --scope core --gpus GPU-2ca08e6b-c538-68bf-4cda-a92268c24150 GPU-7000593a-b3c9-4d20-889a-1a926ac499af > /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/suite.log 2>&1 < /dev/null &\n1407220 /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_suite --root /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024 --data-root /Dataset2/dataset_bci_decode_kxy/data --scope core --gpus GPU-2ca08e6b-c538-68bf-4cda-a92268c24150 GPU-7000593a-b3c9-4d20-889a-1a926ac499af\n1407867 /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_reproduction --data-root /Dataset2/dataset_bci_decode_kxy/data --cache /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/cache --out /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/runs/S03_ME_1-4_4-40 --subject 3 --task ME --labels 1 4 --band 4 40\n1407868 /home/kxy/anaconda3/envs/bci_wjd_20261022/bin/python -u -m experiment_runners.paper_reproduction --data-root /Dataset2/dataset_bci_decode_kxy/data --cache /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/cache --out /home/kxy/LYC/experiments/paper_reproduction_fixed_20261024/runs/S04_ME_1-4_4-40 --subject 4 --task ME --labels 1 4 --band 4 40\n",
+  "independent_test_set": false,
+  "source_code_hashes_verified": true,
+  "excluded": [
+    "raw EEG",
+    "cache",
+    "incomplete fold checkpoints"
+  ]
+}

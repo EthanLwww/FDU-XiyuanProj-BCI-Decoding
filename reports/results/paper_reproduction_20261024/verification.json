@@ -1,0 +1,16 @@
+{
+  "audited_conditions": 2,
+  "errors": [],
+  "checks": [
+    "checkpoint SHA256",
+    "raw stride 128 samples",
+    "no split overlap",
+    "OOF trial coverage",
+    "OOF window coverage",
+    "window probabilities",
+    "majority vote recomputation",
+    "checkpoint epoch vs history",
+    "summary means vs predictions"
+  ],
+  "independent_test_set": false
+}

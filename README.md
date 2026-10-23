@@ -53,6 +53,7 @@ python run_experiments.py repeats --help
 python run_experiments.py scaling --help
 python run_experiments.py scaling-residual --help
 python run_experiments.py compare --help
+python run_experiments.py paper --help
 ```
 
 实验实现位于 `experiment_runners/` 和 `scaling_experiments/`，共用 `bci/` 内的模型、预处理和训练工具。默认路径、GPU 编号和参考 checkpoint 对应实验服务器，迁移环境时需要调整。模型结构、数据划分、超参数和已有结果不因本次目录整理而改变。目录职责与旧命令迁移见 [目录说明](docs/REPOSITORY_LAYOUT.md)。
@@ -78,6 +79,8 @@ python run_experiments.py compare --help
 正式报告、精简 PPT 和 draw.io 架构图见 [reports/](reports/)。可用于重新绘图的指标、逐轮历史和图表见 [reports/results/](reports/results/)。早期图表保留在 `Pictures/`，与上述受控实验分开归档。完整实验目录、权重、原始数据、缓存、日志及临时探测文件不上传。
 
 ## 回归验证
+
+原论文 EEGNet 五折复现的修复说明、命令和评估限制见 [PAPER_REPRODUCTION.md](docs/PAPER_REPRODUCTION.md)。
 
 `tests/` 统一存放模型、训练入口、流式加载和源码快照的正式回归测试。使用合成数据与临时目录，不启动完整数据集实验。
 

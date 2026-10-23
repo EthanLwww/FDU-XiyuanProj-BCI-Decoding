@@ -1,0 +1,20 @@
+{
+  "fold": 3,
+  "n_train_trials": 307,
+  "n_val_trials": 77,
+  "n_train_windows": 10107,
+  "n_val_windows": 2538,
+  "trial_accuracy": 0.8961038961038961,
+  "n_correct_trials": 69,
+  "window_accuracy": 0.7832939322301025,
+  "loss": 0.49174654483795166,
+  "checkpoint_epoch": 22,
+  "epochs_ran": 96,
+  "best_val_window_accuracy": 0.7832939028739929,
+  "checkpoint_sha256": "08212049e65c8ecb2fce56827174f64540943159fcf8f77aa5e636c3acba6124",
+  "elapsed_seconds": 520.8071980900131,
+  "trial_leakage": false,
+  "checkpoint_reloaded_and_verified": true,
+  "parameters": 3074,
+  "ties": 0
+}

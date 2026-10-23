@@ -12,6 +12,7 @@ COMMANDS = {
     "summarize": "scaling_experiments.summarize_scaling",
     "summarize-residual": "scaling_experiments.summarize_residual",
     "compare": "scaling_experiments.compare_scaling_models",
+    "paper": "experiment_runners.paper_reproduction",
 }
 
 
